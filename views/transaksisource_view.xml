@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- syahrirmart.penjualan tree view -->
+    <record id="syahriracademy_transaksisource_view_tree" model="ir.ui.view">
+        <field name="name">Transaksi Source</field>
+        <field name="model">syahriracademy.transaksisource</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="student_ids"/>
+                <field name="tgl_pembelian"/>
+                 <field name="total_bayar" />
+                 <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="syahriracademy_transaksisource_view_form" model="ir.ui.view">
+    <field name="name">From Transaksi Source</field>
+    <field name="model">syahriracademy.transaksisource</field>
+    <field name="arch" type="xml">
+        <form string="From Penjualan">
+            <header>
+                <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                <button name="action_done" type="object" string="Done" class="btn btn-primary" states="confirm"/>
+                <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Anda yakin cancel Quotation ini?"/>
+                <button name="action_draft" type="object" string="Kembali ke Draft" class="btn btn-danger" states="cancelled" confirm="Anda yakin edit Quotation ini?"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done" />
+            </header>
+            <sheet>
+                <group>
+                    <field name="name" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                    <field name="student_ids" widget='many2many_tags' options='{"color_field":"color"}' attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                    <field name="tgl_pembelian" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                     <field name="total_bayar" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                </group>
+                 <group name="daftarsource" string="Daftar Source">
+                    <field name="detailsource_ids" attrs="{'readonly' : [('state', '!=', 'draft')]}">
+                        <tree editable='bottom'>
+                            <field name="source_id" />
+                            <field name="harga_satuan" />
+                            <field name="qty" />
+                            <field name="subtotal" sum = "Total"/>
+                        </tree>
+                    </field>
+                </group>
+            </sheet>
+        </form>
+    </field>
+    </record>
+
+    <record id="syahriracademy_transaksisource_action" model="ir.actions.act_window">
+        <field name="name">Transaksi Source</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">syahriracademy.transaksisource</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="transaksisource_view_menu_act"
+        name="Transaksi Source"
+        parent="syahriracademy__menu_categ"
+        action="syahriracademy_transaksisource_action"
+        sequence="7"/>
+
+</odoo>

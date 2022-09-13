@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_exam_xlsx" model="ir.actions.report">
+        <field name="name">Exam Excel</field>
+        <field name="model">syahriracademy.exam</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">syahriracademy.report_exam_xlsx</field>
+        <field name="report_file">syahriracademy.report_exam_xlsx</field>
+        <field name="binding_model_id" ref="model_syahriracademy_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+    
+     <record id="report_exam_pdf" model="ir.actions.report">
+        <field name="name">Exam Pdf</field>
+        <field name="model">syahriracademy.exam</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">syahriracademy.report_exam_pdf</field>
+        <field name="report_file">syahriracademy.report_exam_pdf</field>
+        <field name="binding_model_id" ref="model_syahriracademy_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_student_pdf" model="ir.actions.report">
+        <field name="name">Student Pdf</field>
+        <field name="model">syahriracademy.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">syahriracademy.report_student_pdf</field>
+        <field name="report_file">syahriracademy.report_student_pdf</field>
+        <field name="binding_model_id" ref="model_syahriracademy_student"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_transaksisource_pdf" model="ir.actions.report">
+        <field name="name">Transaksi Source Pdf</field>
+        <field name="model">syahriracademy.transaksisource</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">syahriracademy.report_transaksisource_pdf</field>
+        <field name="report_file">syahriracademy.report_transaksisource_pdf</field>
+        <field name="binding_model_id" ref="model_syahriracademy_transaksisource"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_transaksisource_xlsx" model="ir.actions.report">
+        <field name="name">Transaksi Source Excel</field>
+        <field name="model">syahriracademy.transaksisource</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">syahriracademy.report_transaksisource_xlsx</field>
+        <field name="report_file">syahriracademy.report_transaksisource_xlsx</field>
+        <field name="binding_model_id" ref="model_syahriracademy_transaksisource"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

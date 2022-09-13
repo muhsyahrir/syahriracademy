@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='syahriracademy_course_view_tree' model='ir.ui.view'>
+        <field name='name'>source</field>
+        <field name='model'>syahriracademy.course</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='name'/>
+                <field name='course_code'/>
+                <field name="source_price" />
+                <field name='credit_hour'/>
+                <field name='course_description'/>
+                <field name='department_id'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='syahriracademy_course_view_form' model='ir.ui.view'>
+        <field name='name'>Form Cource</field>
+        <field name='model'>syahriracademy.course</field>
+        <field name='arch' type='xml'>
+            <form>
+                <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='course_code'/>
+                        <field name="source_price"/>
+                        <field name='credit_hour'/>
+                        <field name='course_description'/>
+                        <field name='department_id'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='syahriracademy_course_view_search' model='ir.ui.view'>
+        <field name='name'>Search Cource</field>
+        <field name='model'>syahriracademy.course</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='name'/>
+                <field name='course_code'/>
+                <field name="source_price" />
+                <field name='credit_hour'/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

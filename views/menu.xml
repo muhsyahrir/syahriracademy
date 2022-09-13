@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="syahriracademy_menu_root" 
+              name="Syahrir Academy" 
+              sequence="1"/>
+
+    <record id='syahriracademy_departement_action' model='ir.actions.act_window'>
+        <field name='name'>Department</field>
+        <field name='res_model'>syahriracademy.departement</field>
+        <field name='view_mode'>kanban,tree,form</field>
+    </record>
+    
+     <menuitem 
+        id='syahriracademy_department_menu' 
+        action='syahriracademy_departement_action' 
+        name='Department'
+        parent='syahriracademy_menu_root'
+        sequence='2'/>
+
+    <record id='syahriracademy_action_course' model='ir.actions.act_window'>
+        <field name='name'>Courses</field>
+        <field name='res_model'>syahriracademy.course</field>
+        <field name='view_mode'>tree,form,kanban</field>
+    </record>
+
+    <menuitem 
+        id='syahrirperpus_course_menu'
+        action='syahriracademy_action_course'
+        name='Courses'
+        parent='syahriracademy_menu_root'
+        sequence='3'/>
+
+    <record id='syahriracademy_student_action' model='ir.actions.act_window'>
+        <field name='name'>List Students</field>
+        <field name='res_model'>syahriracademy.student</field>
+        <field name='view_mode'>tree,form,kanban</field>
+    </record>
+
+    <menuitem 
+        id='syahriracademy_student_menu' 
+        action='syahriracademy_student_action' 
+        name='Students'
+        parent='syahriracademy_menu_root'
+        sequence='4'/>
+
+     <record id='syahriracademy_action_teacher' model='ir.actions.act_window'>
+        <field name='name'>Teachers</field>
+        <field name='res_model'>syahriracademy.teacher</field>
+        <field name='view_mode'>tree,form,kanban</field>
+    </record>
+
+    <menuitem 
+        id='menu_teacher' 
+        action='syahriracademy_action_teacher' 
+        name='Teachers'
+        parent='syahriracademy_menu_root'
+        sequence='5'/> 
+
+    <record id='syahriracademy_action_exam' model='ir.actions.act_window'>
+        <field name='name'>Exams</field>
+        <field name='res_model'>syahriracademy.exam</field>
+        <field name='view_mode'>tree,form,kanban</field>
+    </record>
+
+    <menuitem 
+        id='menu_exam' 
+        action='syahriracademy_action_exam' 
+        name='Exams'
+        parent='syahriracademy_menu_root'
+        sequence='6'/> 
+
+    <menuitem id="syahriracademy__menu_categ" 
+              name="Transaksi" 
+              parent="syahriracademy_menu_root" 
+              sequence="7"/>
+    
+</odoo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='view_student_tree' model='ir.ui.view'>
+        <field name='name'>syahriracademy.student.tree</field>
+        <field name='model'>syahriracademy.student</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='name'/>
+                <field name='student_id'/>
+                <field name='student_phone'/>
+                <field name='student_email'/>
+                <field name='student_photo'/>
+                <field name='department_id'/>
+                <field name='student_dob'/>
+                <field name='course_ids'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='view_student_form' model='ir.ui.view'>
+        <field name='name'>syahriracademy.student.form</field>
+        <field name='model'>syahriracademy.student</field>
+        <field name='arch' type='xml'>
+            <form>
+                
+                <sheet>
+                    <group>
+                        <group>
+                            <field name='name'/>
+                            <field name='student_id'/>
+                            <field name='student_phone'/>
+                            <field name='student_email'/>
+                            <field name='department_id'/>
+                        </group>
+                        <group>
+                            <field name='student_photo' widget='image' class='oe_avatar'/>
+                            <field name='student_dob'/>
+                            <field name='course_ids' widget='many2many_tags' options='{"color_field":"color"}'/>
+                        </group>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='view_student_search' model='ir.ui.view'>
+        <field name='name'>syahriracademy.student.search</field>
+        <field name='model'>syahriracademy.student</field>
+        <field name='arch' type='xml'>
+            <search>
+                <field name='name'/>
+                <field name='student_id'/>
+                <field name='student_phone'/>
+                <field name='student_email'/>
+                <field name='student_dob'/>
+            </search>
+        </field>
+    </record>
+
+    <record id="student_action" model="ir.actions.act_window">
+        <field name='name'>List Students</field>
+        <field name='res_model'>syahriracademy.student</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first student
+            </p>
+        </field>
+    </record>
+
+</odoo>

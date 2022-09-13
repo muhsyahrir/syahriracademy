@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- syahriracademy.studentcount form view -->
+<record id="student_count_view_form_wizzard" model="ir.ui.view">
+    <field name="name">Additional Student</field>
+    <field name="model">syahriracademy.studentcount</field>
+    <field name="arch" type="xml">
+        <form string="Form Additional Student">
+            <group>
+                <field name="exam_id" />
+                <field name="amount" />
+            </group>
+            <footer>
+                <button class="btn btn-warning" type="object" name="button_student_count"  string="Additional Student"/>
+                <button string="Cancel" special="cancel" class="btn btn-danger"/>
+            </footer>
+        </form>
+    </field>
+</record>
+    <record id="student_acount_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Additional Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">syahriracademy.studentcount</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="student_count_view_form_wizzard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="student_acount_menu_action_wizzard"
+        name="Additional Student"
+        parent="syahriracademy_menu_root"
+        action="student_acount_action_wizzard"
+        sequence="7"/>
+
+</odoo>

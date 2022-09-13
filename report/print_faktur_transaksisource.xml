@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_transaksisource_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2><b>Faktur Transaksi Source</b></h2>
+                    <t t-foreach="docs" t-as="d">
+                        <div class="row">
+                            <div class="col-4">No. Transaksi :</div>
+                            <div class="col-8"><span t-field="d.name"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Student Name :</div>
+                            <div class="col-8"><span t-field="d.student_ids"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Tgl. Transaksi :</div>
+                            <div class="col-8"><span t-field="d.tgl_pembelian"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Total Bayar :</div>
+                            <div class="col-8"><span t-field="d.total_bayar"/></div>
+                        </div>
+                        <t t-foreach="d.detailsource_ids" t-as="ds">
+                            <div class="row">
+                                <div class="col-4">Source :</div>
+                                <div class="col-4"><span t-field="ds.source_id.name"/></div>
+                            </div>
+                        </t>
+                    </t>    
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

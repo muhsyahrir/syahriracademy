@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_syahriracademy_departement,access.syahriracademy.departement,model_syahriracademy_departement,,1,1,1,1
+access_syahriracademy_student,access.syahriracademy.student,model_syahriracademy_student,,1,1,1,1
+access_syahriracademy_course,access.syahriracademy.course,model_syahriracademy_course,,1,1,1,1
+access_syahriracademy_teacher,access.syahriracademy.teacher,model_syahriracademy_teacher,,1,1,1,1
+access_syahriracademy_exam,access.syahriracademy.exam,model_syahriracademy_exam,,1,1,1,1
+access_syahriracademy_studentcount,access.syahriracademy.studentcount,model_syahriracademy_studentcount,,1,1,1,1
+access_syahriracademy_transaksisource,access.syahriracademy.transaksisource,model_syahriracademy_transaksisource,,1,1,1,1
+access_syahriracademy_detailsource,access.syahriracademy.detailsource,model_syahriracademy_detailsource,,1,1,1,1
